@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 class ControllerConfiguration {
     private string $name;
@@ -14,6 +14,7 @@ class ControllerConfiguration {
     {
         return $this->name;
     }
+
     public function getAction(): string
     {
         return $this->action;
@@ -21,7 +22,6 @@ class ControllerConfiguration {
 }
 
 class Controller {
-    
     private ControllerConfiguration $controllerConfiguration;
 
     public function __construct(ControllerConfiguration $controllerConfiguration)
@@ -29,19 +29,13 @@ class Controller {
         $this->controllerConfiguration = $controllerConfiguration;
     }
 
-    public function getConfiguratoin(): string
+    public function getConfiguration(): string
     {
         return $this->controllerConfiguration->getName() . '@' . $this->controllerConfiguration->getAction();
     }
-  
 }
 
-$configuration = new ControllerConfiguration('PostController', 'index');
-$configuration1 = new ControllerConfiguration('PostController', 'show');
+$configuration = new ControllerConfiguration('supper', 'text');
+$controller1 = new Controller($configuration);
 
-$controller = new Controller($configuration);
-$controller1 = new Controller($configuration1);
-
-print_r($controller->getConfiguratoin());
-print_r($controller1->getConfiguratoin());
-
+print_r($controller1->getConfiguration());

@@ -30,14 +30,14 @@ class NativeWorkerFactory implements AbstractFactory
     }
 }
 
-interface Woker {
+interface Worker {
     public function work();
 }
 
-interface DeveloperWorker extends Woker {
+interface DeveloperWorker extends Worker {
 
 }
-interface DesignerWorker extends Woker {
+interface DesignerWorker extends Worker {
     
 }
 
